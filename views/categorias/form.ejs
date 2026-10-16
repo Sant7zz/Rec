@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<h2><%= titulo %></h2>
+<% if (erro) { %><p class="erro"><%= erro %></p><% } %>
+<form method="POST" action="<%= action %>" class="form">
+  <label>Nome
+    <input type="text" name="nome" maxlength="100" value="<%= categoria.nome || '' %>" required>
+  </label>
+  <label>Descrição
+    <textarea name="descricao" rows="3"><%= categoria.descricao || '' %></textarea>
+  </label>
+  <div class="acoes">
+    <button class="btn" type="submit">Salvar</button>
+    <a class="btn btn-sec" href="/categorias">Cancelar</a>
+  </div>
+</form>
+<%- include('../partials/footer') %>
